@@ -1,0 +1,40 @@
+Avant JDK 5.0 (Classic RMI) :
+
+Interface distante :
+
+Définissez une interface distante étendant Remote.
+Stub et Skeleton :
+
+Générez manuellement les classes stub et skeleton à l'aide de l'outil rmic.
+Implémentez le skeleton côté serveur.
+Implémentation du serveur :
+
+Implémentez la classe serveur étendant UnicastRemoteObject et utilisant le skeleton.
+Enregistrez l'objet distant dans le registre RMI.
+Code client :
+
+Obtenez une référence distante à l'objet distant à partir du registre RMI.
+Utilisez le stub pour appeler les méthodes distantes.
+Après JDK 5.0 (Dynamic Stub) :
+
+Interface distante :
+
+Définissez une interface distante étendant Remote.
+Implémentation du serveur :
+
+Implémentez la classe serveur étendant UnicastRemoteObject.
+Enregistrement de l'objet distant :
+
+Utilisez LocateRegistry.createRegistry() pour créer un registre RMI.
+Utilisez rebind() pour enregistrer l'objet distant dans le registre.
+Code client :
+
+Obtenez une référence distante à l'objet distant à partir du registre RMI.
+Utilisez le stub (généré dynamiquement) pour appeler les méthodes distantes.
+Lancement du registre RMI (si nécessaire) :
+
+Si le registre RMI n'est pas déjà en cours d'exécution, assurez-vous de le lancer (par exemple, en utilisant rmiregistry).
+Exécution de l'application :
+
+Compilez vos classes et exécutez votre application distribuée.
+Avec JDK 5.0 et versions ultérieures, la génération manuelle des stubs et des skeletons n'est plus nécessaire. Les classes stub sont générées dynamiquement à l'exécution, simplifiant ainsi le processus de développement d'applications distribuées avec RMI.
